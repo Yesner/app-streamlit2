@@ -23,6 +23,9 @@ config = AutoConfig.from_pretrained(MODEL)
 
 model = AutoModelForSequenceClassification.from_pretrained(MODEL)
 
+password_guess = st.text_input('What is the Password?') 
+if password_guess != st.secrets["password"]: 
+    st.stop()
 
 st.title("Sentiment Analysis")
 text = st.text_input("Enter text to analyze")
@@ -40,4 +43,6 @@ if text:
     for i in range(scores.shape[0]):
         l = config.id2label[ranking[i]]
         s = scores[ranking[i]]
-        st.write(f"{i+1}) {l} {np.round(float(s), 4)*100}%")
+        st.write(f"{i+1}) {l} {np.round(float(s), 2)*100}%")
+
+st.write("About me: https://www.linkedin.com/in/yesner-salgado/")

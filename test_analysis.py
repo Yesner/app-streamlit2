@@ -23,9 +23,6 @@ def main():
 
     model = AutoModelForSequenceClassification.from_pretrained(MODEL)
 
-
-
-    st.title("Sentiment Analysis")
     text = st.text_input("Enter text to analyze")
 
     result = preprocess(text)

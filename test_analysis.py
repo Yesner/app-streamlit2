@@ -37,6 +37,7 @@ def main():
     ranking = np.argsort(scores)
     ranking = ranking[::-1]
     if text:
+        st.write(':astonished:')
         for i in range(scores.shape[0]):
             l = config.id2label[ranking[i]]
             s = scores[ranking[i]]

@@ -23,6 +23,8 @@ def main():
 
     model = AutoModelForSequenceClassification.from_pretrained(MODEL)
 
+    st.header("Sentiment Analysis", divider='rainbow')
+    st.header('Are you :blue[ready]?:sunglasses:')
     text = st.text_input("Enter text to analyze")
 
     result = preprocess(text)
@@ -42,7 +44,7 @@ def main():
 
 
 if __name__ == '__main__':
-    st.title("Sentiment Analysis")
+    st.sidebar.title("Login")
     password_guess = st.sidebar.text_input('What is the Password?',type="password") 
     if password_guess != st.secrets["password"]: 
         st.stop()

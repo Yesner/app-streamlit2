@@ -43,7 +43,7 @@ def main():
 
 if __name__ == '__main__':
     st.title("Sentiment Analysis")
-    password_guess = st.text_input('What is the Password?',type="password") 
+    password_guess = st.sidebar.text_input('What is the Password?',type="password") 
     if password_guess != st.secrets["password"]: 
         st.stop()
     else:
